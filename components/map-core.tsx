@@ -52,7 +52,9 @@ export default function MapCore({
   highlightCodes = [],
   activeCode = null,
   focusCode = null,
+  focusCodes = undefined,
   focusZoom = 2.2,
+  regionZoom = 1.6,
   detailsByCode,
   accentColor = "#5A3FB9",
   // theme colors
@@ -69,7 +71,9 @@ export default function MapCore({
   highlightCodes?: string[]
   activeCode?: string | null
   focusCode?: string | null
+  focusCodes?: string[]
   focusZoom?: number
+  regionZoom?: number
   detailsByCode?: Record<string, CountryDetails>
   accentColor?: string
   fillDefault?: string
@@ -98,6 +102,25 @@ export default function MapCore({
       }
     }
   }, [focusCode, focusZoom])
+
+  // Focus multiple codes (e.g., a region): center on average and set region zoom
+  useEffect(() => {
+    if (focusCodes && focusCodes.length > 0) {
+      const pts: Array<[number, number]> = []
+      for (const k of focusCodes) {
+        const p = codeToCentroidRef.current.get(k.toUpperCase())
+        if (p) pts.push(p)
+      }
+      if (pts.length > 0) {
+        const avg: [number, number] = [
+          pts.reduce((s, p) => s + p[0], 0) / pts.length,
+          pts.reduce((s, p) => s + p[1], 0) / pts.length,
+        ]
+        setCenter(avg)
+        setZoom(regionZoom)
+      }
+    }
+  }, [focusCodes, regionZoom])
 
   return (
     <div

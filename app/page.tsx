@@ -123,6 +123,7 @@ export default function Page() {
     return Array.from(s)
   }, [debouncedQuery, filtered, regionHighlight])
   const [focusCode, setFocusCode] = useState<string | null>(null)
+  const [focusCodes, setFocusCodes] = useState<string[] | undefined>(undefined)
 
   return (
     <main className="min-h-[100dvh] bg-black text-white ">
@@ -234,8 +235,9 @@ export default function Page() {
                         key={region}
                         onClick={() => {
                           setRegionHighlight(active ? [] : codes)
+                          setFocusCodes(active ? undefined : codes)
                           if (codes.length > 0) setFocusCode(codes[0])
-                          document.getElementById("map-and-search")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                          document.getElementById("map-focus")?.scrollIntoView({ behavior: "smooth", block: "center" })
                         }}
                         className={`rounded-full px-3 py-1 text-xs border transition cursor-pointer ${active ? "border-purple-400/60 bg-purple-500/10 text-white" : "border-white/10 bg-white/5 text-white/80 hover:bg-white/10"}`}
                         title={`Highlight ${region}`}
@@ -249,7 +251,7 @@ export default function Page() {
             </div>
             <div className="grid md:grid-cols-5 gap-6 items-start">
               <div id="map-focus" className="md:col-span-3 bg-black rounded-xl ring-[1px] ring-white/10">
-                    <MapCore
+                  <MapCore
                       accentColor="#5A3FB9"
                       selectedCode={selectedCode}
                   onSelect={(code) => {
@@ -258,6 +260,7 @@ export default function Page() {
                   highlightCodes={highlightCodes}
                   activeCode={hoverCode || selectedCode || null}
                   focusCode={focusCode}
+                  focusCodes={focusCodes}
                       detailsByCode={detailsByCode}
                       fillDefault="rgba(241,241,239,0.06)"
                       fillHover="rgba(90,63,185,0.22)"
