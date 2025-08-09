@@ -1,0 +1,17 @@
+[
+  { "name": "Afghanistan", "code": "AF", "capital": "Kabul", "region": "Asia", "population": 40218234, "flag": "https://flagcdn.com/af.svg" },
+  { "name": "Åland Islands", "code": "AX", "capital": "Mariehamn", "region": "Europe", "population": 30145, "flag": "https://flagcdn.com/ax.svg" },
+  { "name": "Albania", "code": "AL", "capital": "Tirana", "region": "Europe", "population": 2837743, "flag": "https://flagcdn.com/al.svg" },
+  { "name": "Algeria", "code": "DZ", "capital": "Algiers", "region": "Africa", "population": 45990149, "flag": "https://flagcdn.com/dz.svg" },
+  { "name": "American Samoa", "code": "AS", "capital": "Pago Pago", "region": "Oceania", "population": 44273, "flag": "https://flagcdn.com/as.svg" },
+  { "name": "Andorra", "code": "AD", "capital": "Andorra la Vella", "region": "Europe", "population": 79200, "flag": "https://flagcdn.com/ad.svg" },
+  { "name": "Angola", "code": "AO", "capital": "Luanda", "region": "Africa", "population": 35638440, "flag": "https://flagcdn.com/ao.svg" },
+  { "name": "Anguilla", "code": "AI", "capital": "The Valley", "region": "North America", "population": 15109, "flag": "https://flagcdn.com/ai.svg" },
+  { "name": "Antigua and Barbuda", "code": "AG", "capital": "Saint John's", "region": "North America", "population": 97929, "flag": "https://flagcdn.com/ag.svg" },
+  { "name": "Argentina", "code": "AR", "capital": "Buenos Aires", "region": "South America", "population": 45808747, "flag": "https://flagcdn.com/ar.svg" },
+  { "name": "Armenia", "code": "AM", "capital": "Yerevan", "region": "Asia", "population": 2780469, "flag": "https://flagcdn.com/am.svg" },
+  { "name": "Australia", "code": "AU", "capital": "Canberra", "region": "Oceania", "population": 26177413, "flag": "https://flagcdn.com/au.svg" },
+  { "name": "Austria", "code": "AT", "capital": "Vienna", "region": "Europe", "population": 9090917, "flag": "https://flagcdn.com/at.svg" },
+  { "name": "Azerbaijan", "code": "AZ", "capital": "Baku", "region": "Asia", "population": 10300558, "flag": "https://flagcdn.com/az.svg" },
+  { "name": "Bahamas", "code": "BS", "capital": "Nassau", "region": "North America", "population": 410984, "flag": "https://flagcdn.com/bs.svg" }
+]
